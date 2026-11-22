@@ -1,0 +1,4192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayman Ezzamani - Portfolio BTS SIO SISR</title>
+    <meta name="description" content="Portfolio d'Ayman Ezzamani, étudiant en BTS SIO option SISR, spécialisé en réseaux et cybersécurité.">
+    <link rel="icon" type="image/png" href="favion.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <style>
+/* ==========================================================================
+   PORTFOLIO AYMAN EZZAMANI - DESIGN SYSTEM MODERNE & RESPONSIVE
+   BTS SIO SISR (Systèmes & Réseaux / Cybersécurité)
+   ========================================================================== */
+
+/* --- Reset & Variables --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Backgrounds */
+    --bg-primary: #0a0f1d;
+    --bg-secondary: #0f172a;
+    --bg-card: rgba(21, 31, 50, 0.75);
+    --bg-card-hover: rgba(30, 41, 69, 0.85);
+    --bg-card-solid: #131c2e;
+    --bg-glass: rgba(15, 23, 42, 0.75);
+    --bg-input: rgba(15, 23, 42, 0.6);
+
+    /* Text colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    /* Accents */
+    --accent-cyan: #06b6d4;
+    --accent-cyan-light: #38bdf8;
+    --accent-cyan-glow: rgba(6, 182, 212, 0.3);
+    --accent-purple: #8b5cf6;
+    --accent-purple-light: #a78bfa;
+    --accent-purple-glow: rgba(139, 92, 246, 0.3);
+    --accent-yellow: #fbbf24;
+    --accent-orange: #f97316;
+    --accent-green: #10b981;
+    --accent-green-glow: rgba(16, 185, 129, 0.25);
+
+    /* Borders */
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(6, 182, 212, 0.4);
+    --border-cyan: rgba(6, 182, 212, 0.25);
+    --hover-bg: rgba(255, 255, 255, 0.06);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 25px rgba(6, 182, 212, 0.2);
+    --shadow-purple: 0 0 25px rgba(139, 92, 246, 0.2);
+
+    /* Typography */
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Spacing & Radii */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+}
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.65;
+    overflow-x: hidden;
+    position: relative;
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(139, 92, 246, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.05) 0%, transparent 45%);
+    background-attachment: fixed;
+}
+
+/* --- Scrollbar moderne --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* --- Header & Navigation --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 15, 29, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0.9rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-ae {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.logo-container:hover .logo-ae {
+    transform: rotate(6deg) scale(1.05);
+    border-color: var(--accent-cyan);
+}
+
+.separator {
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: var(--border);
+    user-select: none;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan-light) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.4rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+}
+
+.nav-links li {
+    display: flex;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: var(--radius-full);
+    transition: all 0.25s ease;
+    font-weight: 500;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-links a.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(139, 92, 246, 0.25));
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn:hover {
+    background: var(--accent-cyan);
+    color: #ffffff;
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(6, 182, 212, 0.35);
+}
+
+.social-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    font-size: 1.4rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-cyan);
+    border-color: var(--border-cyan);
+}
+
+/* --- Global Section Styles --- */
+main {
+    position: relative;
+}
+
+section {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.8rem;
+    letter-spacing: -0.03em;
+    position: relative;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: var(--radius-full);
+    margin: 0.75rem auto 0 auto;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding-top: 7.5rem;
+    padding-bottom: 5rem;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 680px;
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+/* Badge Statut Pro */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    border-radius: var(--radius-full);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent-cyan-light);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 14px rgba(6, 182, 212, 0.1);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+
+.hero h1 strong,
+.shiny-text,
+.hero-name {
+    display: inline-block;
+    background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 40%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    position: relative;
+}
+
+/* Shimmer subtil et élégant sans faire clignoter ni disparaître le nom */
+.shiny-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: subtleShine 4s infinite ease-in-out;
+}
+
+@keyframes subtleShine {
+    0% { left: -100%; }
+    30% { left: 140%; }
+    100% { left: 140%; }
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.4rem;
+    line-height: 1.75;
+}
+
+.hero p strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* --- Boutons UI Modernes --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.8rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.98rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    letter-spacing: -0.01em;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, #2563eb 50%, var(--accent-purple) 100%);
+    background-size: 200% auto;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 24px -4px rgba(6, 182, 212, 0.4);
+}
+
+.btn-primary:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -4px rgba(6, 182, 212, 0.55);
+}
+
+.btn-secondary {
+    background: rgba(15, 23, 42, 0.6);
+    color: var(--accent-cyan-light);
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+    background: rgba(6, 182, 212, 0.12);
+    border-color: var(--accent-cyan);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px -4px rgba(6, 182, 212, 0.25);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Hero Image & Avatar Container */
+.hero-image {
+    flex: 0 0 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.hero-avatar-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-avatar-glow {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 70%);
+    filter: blur(20px);
+    z-index: 1;
+    animation: pulseRing 4s infinite alternate ease-in-out;
+}
+
+@keyframes pulseRing {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+.hero-image img,
+.hero-avatar-img,
+.profile-pic {
+    width: 300px !important;
+    height: 300px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    object-position: 50% 30% !important;
+    position: relative;
+    z-index: 2;
+    border: 3px solid rgba(6, 182, 212, 0.45) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(6, 182, 212, 0.25) !important;
+    transform: none !important;
+    display: block;
+    margin: 0 auto !important;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image:hover img,
+.hero-image:hover .hero-avatar-img {
+    transform: scale(1.03) !important;
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(6, 182, 212, 0.4) !important;
+}
+
+/* Badges flottants sur Hero */
+.floating-badge {
+    position: absolute;
+    z-index: 3;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    animation: floatBadge 3s infinite ease-in-out alternate;
+}
+
+.floating-badge.badge-top {
+    top: 15px;
+    right: -20px;
+    border-color: rgba(6, 182, 212, 0.35);
+}
+
+.floating-badge.badge-bottom {
+    bottom: 20px;
+    left: -20px;
+    animation-delay: 1.5s;
+    border-color: rgba(139, 92, 246, 0.35);
+}
+
+@keyframes floatBadge {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+
+/* --- Section À Propos --- */
+#apropos {
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+.about-text {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2.4rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.about-text h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-cyan-light);
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+    letter-spacing: -0.02em;
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem 1.4rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-cyan);
+    background: var(--bg-card-hover);
+    box-shadow: 0 12px 30px -5px rgba(6, 182, 212, 0.15);
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.9rem;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 182, 212, 0.08);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1) rotate(4deg);
+    background: rgba(6, 182, 212, 0.15);
+}
+
+.skill-card h4 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.skill-card p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+/* --- Section Parcours (Timeline) --- */
+#parcours {
+    position: relative;
+}
+
+.timeline {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-purple) 60%, var(--accent-yellow) 100%);
+    border-radius: var(--radius-full);
+}
+
+.timeline-item {
+    position: relative;
+    margin-left: 60px;
+    margin-bottom: 2.8rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2rem 2.2rem;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -49px;
+    top: 2rem;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 4px solid var(--accent-cyan);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-4px) translateX(4px);
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(6, 182, 212, 0.12);
+}
+
+.timeline-item:hover::before {
+    background: var(--accent-cyan);
+    border-color: #ffffff;
+    transform: scale(1.2);
+    box-shadow: 0 0 16px var(--accent-cyan);
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 5px 14px;
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--accent-yellow);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.9rem;
+    text-transform: capitalize;
+}
+
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+}
+
+.timeline-company {
+    color: var(--accent-cyan-light);
+    font-weight: 600;
+    font-size: 0.98rem;
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.timeline-company::before {
+    content: '🏢';
+    font-size: 0.95rem;
+}
+
+.timeline-description {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+/* --- Section Réalisations Techniques --- */
+#realisations {
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.45) 50%, transparent 100%);
+}
+
+.realisations-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.realisation-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.realisation-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.realisation-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-cyan);
+    background: var(--bg-card-hover);
+    box-shadow: 0 16px 40px -10px rgba(6, 182, 212, 0.15);
+}
+
+.realisation-card:hover::after {
+    opacity: 1;
+}
+
+.realisation-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+}
+
+.realisation-description {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
+    flex-grow: 1;
+}
+
+.realisation-action {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.8rem;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.6rem;
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--accent-cyan-light);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background: var(--accent-cyan);
+    color: #ffffff;
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* --- Section Épreuves BTS SIO --- */
+#epreuves {
+    position: relative;
+}
+
+.epreuves-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    max-width: 580px;
+    margin: 0 auto 3.5rem auto;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 6px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem 1.6rem;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.35);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.epreuve-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3rem auto;
+}
+
+.epreuve-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+}
+
+.epreuve-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Encart Synthèse E5 */
+.e5-synthesis-card {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin: 2.5rem auto;
+    max-width: 800px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Accordéon Projets E5 */
+.e5-projects-section {
+    margin: 3.5rem 0 2rem 0;
+    padding: 2.5rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+}
+
+.projects-accordion {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.project-item {
+    margin-bottom: 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+}
+
+.project-item:hover {
+    border-color: rgba(6, 182, 212, 0.35);
+}
+
+.project-btn {
+    width: 100%;
+    padding: 1.3rem 1.8rem;
+    background: var(--bg-card);
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.project-btn::after {
+    content: '+';
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--accent-cyan);
+    transition: transform 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.project-btn.active::after {
+    content: '−';
+    color: #ffffff;
+    transform: rotate(180deg);
+}
+
+.project-btn:hover {
+    background: var(--bg-card-hover);
+    color: var(--accent-cyan-light);
+}
+
+.project-btn.active {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%);
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-content {
+    display: none;
+    padding: 2.2rem;
+    background: rgba(10, 15, 29, 0.65);
+    animation: fadeIn 0.35s ease;
+}
+
+.project-content.active {
+    display: block;
+}
+
+.project-description {
+    margin-bottom: 1.8rem;
+}
+
+.project-description h4 {
+    font-family: var(--font-heading);
+    color: var(--accent-cyan-light);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+}
+
+.project-description p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.project-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.project-image {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.project-image::after {
+    content: '🔍 Agrandir';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 15, 29, 0.65);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    backdrop-filter: blur(2px);
+    transition: opacity 0.25s ease;
+}
+
+.project-image:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25);
+}
+
+.project-image:hover::after {
+    opacity: 1;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.06);
+}
+
+/* --- Section E6 (Schéma + Blocs) --- */
+.e6-schema {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.e6-schema-title {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.e6-schema-card {
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.e6-schema-card:hover {
+    transform: scale(1.01);
+}
+
+.e6-schema-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
+}
+
+.e6-schema-desc {
+    margin-top: 1.2rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.e6-cards-grid {
+    margin-top: 3.5rem;
+    margin-bottom: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
+.e6-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2.2rem 1.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-sm);
+}
+
+.e6-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-cyan);
+    background: var(--bg-card-hover);
+    box-shadow: 0 16px 36px -10px rgba(6, 182, 212, 0.18);
+}
+
+.e6-card-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1.4rem auto;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.e6-card h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 0.6rem;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.e6-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.6rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.e6-card .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.95rem;
+}
+
+/* --- Section Veilles Technologiques --- */
+#veilles {
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%);
+}
+
+.veilles-filter {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1.8rem;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    color: #ffffff;
+    border-color: rgba(6, 182, 212, 0.4);
+    background: var(--bg-card-hover);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.35);
+}
+
+.filter-btn[data-filter="cyber-ai"] {
+    position: relative;
+}
+
+.veilles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
+}
+
+.veille-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2.2rem;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.veille-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-cyan);
+    box-shadow: 0 16px 40px -10px rgba(6, 182, 212, 0.18);
+    background: var(--bg-card-hover);
+}
+
+.veille-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.veille-date {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.veille-date::before {
+    content: '📅';
+    margin-right: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.veille-tag {
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.veille-tag.cyber-ai {
+    background: linear-gradient(135deg, #ef4444, #8b5cf6);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.veille-card h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-cyan-light);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.veille-card h4 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.5rem 0;
+}
+
+.veille-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.98rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Section Certifications --- */
+#certifications {
+    position: relative;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.75rem;
+}
+
+.certification-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 16px 36px -8px rgba(6, 182, 212, 0.25);
+}
+
+.cert-preview {
+    height: 220px;
+    background: #0b1120;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.cert-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certification-card:hover .cert-preview img {
+    transform: scale(1.06);
+}
+
+.cert-preview::after {
+    content: '📄 Cliquer pour ouvrir';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 15, 29, 0.7);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    backdrop-filter: blur(2px);
+    transition: opacity 0.25s ease;
+}
+
+.certification-card:hover .cert-preview::after {
+    opacity: 1;
+}
+
+.cert-card-info {
+    padding: 1.4rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cert-card-info h3 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    color: var(--accent-cyan-light);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+/* --- Section Contact --- */
+#contact {
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.5) 50%, transparent 100%);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2.8rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-cyan-light);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.95rem 1.2rem;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    background: rgba(15, 23, 42, 0.85);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-cyan-light);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem 1.6rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+}
+
+.contact-item:hover {
+    transform: translateX(6px);
+    border-color: var(--border-cyan);
+    background: var(--bg-card-hover);
+    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.12);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    color: var(--accent-cyan-light);
+    flex-shrink: 0;
+}
+
+.contact-details h4 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.contact-details p,
+.contact-details a {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+    color: var(--accent-cyan-light);
+}
+
+/* --- Footer --- */
+footer {
+    background: #070a14;
+    border-top: 1px solid var(--border);
+    padding: 4.5rem 2rem 2.5rem 2rem;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+.footer-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 380px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-links a:hover {
+    color: var(--accent-cyan-light);
+    transform: translateX(3px);
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.footer-bottom {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+/* --- Modals & Lightbox --- */
+
+/* Lightbox pour les images */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 8, 16, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    object-fit: contain;
+}
+
+.lightbox-counter {
+    margin-top: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--border);
+    padding: 6px 18px;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 2010;
+}
+
+.lightbox-close:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    transform: rotate(90deg);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 2010;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-nav:hover {
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Modal pour les certificats */
+.cert-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 8, 16, 0.92);
+    backdrop-filter: blur(14px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.cert-modal.active {
+    display: flex;
+}
+
+.cert-modal-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    width: 92%;
+    max-width: 1050px;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.cert-modal-close:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.cert-modal h3,
+#cert-modal-title {
+    font-family: var(--font-heading);
+    padding: 1.4rem 2rem;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    padding-right: 4rem;
+}
+
+.cert-modal-body {
+    flex: 1;
+    overflow: hidden;
+    background: #0b0f19;
+}
+
+.cert-modal-body object {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Modal pour mentions légales */
+.mentions-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 8, 16, 0.92);
+    backdrop-filter: blur(14px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.mentions-modal.active {
+    display: flex;
+}
+
+.mentions-modal-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    width: 90%;
+    max-width: 820px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.mentions-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.mentions-modal-close:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.mentions-modal-body {
+    padding: 3rem;
+    overflow-y: auto;
+}
+
+.mentions-modal-body h1 {
+    font-family: var(--font-heading);
+    color: var(--accent-cyan-light);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.02em;
+}
+
+.mentions-modal-body h2 {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 2rem 0 0.8rem 0;
+    text-align: left;
+    display: block;
+}
+
+.mentions-modal-body h2::after {
+    display: none;
+}
+
+.mentions-modal-body p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.mentions-modal-body a {
+    color: var(--accent-cyan-light);
+    text-decoration: underline;
+}
+
+/* --- Animations --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Tablettes, Mobiles)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .realisations-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navigation Mobile */
+    .nav-links {
+        display: none;
+        border-radius: 0 0 var(--radius-xl) var(--radius-xl) !important;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75) !important;
+        border: 1px solid var(--border) !important;
+        border-top: none !important;
+    }
+
+    .nav-links li {
+        width: 100%;
+        display: block;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.85rem 1rem;
+        font-size: 1.05rem;
+        display: block;
+        border-radius: var(--radius-md);
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    /* Hero Responsive */
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2.5rem;
+        padding-top: 6.5rem;
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-badge {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        flex: none;
+    }
+
+    .hero-avatar-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-avatar-glow {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-image img,
+    .hero-avatar-img,
+    .profile-pic {
+        width: 230px !important;
+        height: 230px !important;
+    }
+
+    .floating-badge {
+        display: none; /* Masqué sur petits écrans pour éviter la superposition */
+    }
+
+    /* Sections */
+    section {
+        padding: 4rem 1.25rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2.2rem;
+    }
+
+    /* À Propos */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline */
+    .timeline::before {
+        left: 14px;
+    }
+
+    .timeline-item {
+        margin-left: 45px;
+        padding: 1.6rem;
+    }
+
+    .timeline-item::before {
+        left: -37px;
+        width: 15px;
+        height: 15px;
+    }
+
+    /* Épreuves */
+    .epreuves-tabs {
+        flex-direction: column;
+        border-radius: var(--radius-xl);
+    }
+
+    .tab-btn {
+        width: 100%;
+        border-radius: var(--radius-md);
+        padding: 0.85rem 1.2rem;
+    }
+
+    .e5-projects-section {
+        padding: 1.25rem;
+        margin: 2rem 0;
+    }
+
+    .project-btn {
+        padding: 1.1rem 1.2rem;
+        font-size: 1.05rem;
+    }
+
+    .project-content {
+        padding: 1.4rem;
+    }
+
+    .project-images-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 170px;
+    }
+
+    /* Formulaire */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 1.8rem;
+    }
+
+    /* Veilles & Certifications */
+    .veilles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Lightbox & Modals */
+    .lightbox-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.5rem;
+    }
+
+    .cert-modal {
+        padding: 1rem;
+    }
+
+    .cert-modal-content {
+        width: 100%;
+        height: 92vh;
+    }
+
+    .mentions-modal {
+        padding: 1rem;
+    }
+
+    .mentions-modal-body {
+        padding: 1.8rem 1.4rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-section p {
+        margin: 0 auto;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project-btn {
+        font-size: 0.98rem;
+        padding: 1rem;
+    }
+
+    .veille-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+
+/* Additional Utility & Element Styles */
+.feather {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.feather-mail {
+    stroke: currentColor;
+}
+
+.feather-linkedin {
+    stroke: currentColor;
+}
+
+.contact-icon.email {
+    background: rgba(6, 182, 212, 0.12);
+    border-color: rgba(6, 182, 212, 0.3);
+    color: var(--accent-cyan-light);
+}
+
+.contact-icon.linkedin {
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: var(--accent-purple-light);
+}
+
+.contact-icon.location {
+    background: rgba(251, 191, 36, 0.12);
+    border-color: rgba(251, 191, 36, 0.3);
+    color: var(--accent-yellow);
+}
+
+.skills-cloud {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    margin: 0.4rem;
+    padding: 0.5rem 1.1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.skill-tag:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="favion2.png" alt="Logo AE" class="logo-ae">
+                <span class="separator">|</span>
+                <a href="#" class="logo-text">Ayman Ezzamani</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#epreuves">Épreuves</a></li>
+                <li><a href="#veilles">Veilles</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="mailto:aymanezzamani7@gmail.com" target="_blank" class="social-btn" title="Envoyer un email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-mail">
+                        <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+                        <polyline points="3 7 12 13 21 7"></polyline>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ayman-ezzamani" target="_blank" class="social-btn"
+                    title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Étudiant BTS SIO SISR · Cybersécurité & Réseaux</span>
+                </div>
+                <h1>Bonjour, je suis <br><strong class="shiny-text">Ayman Ezzamani</strong></h1>
+                <p>Étudiant en <strong>BTS SIO – option SISR (2e année)</strong>, passionné par les réseaux et la
+                    cybersécurité.</p>
+                <div class="hero-buttons">
+                    <a href="CV.pdf" target="_blank" class="btn btn-primary">📜 Télécharger mon CV</a>
+                    <a href="#realisations" class="btn btn-secondary">🚀 Voir mes réalisations</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-avatar-wrapper">
+                    <div class="hero-avatar-glow"></div>
+                    <img src="ayman.jpg" alt="Portrait d'Ayman Ezzamani" class="hero-avatar-img">
+                    <div class="floating-badge badge-top">
+                        <span>🛡️</span> SISR & Cyber
+                    </div>
+                    <div class="floating-badge badge-bottom">
+                        <span>🌐</span> Réseaux & Systèmes
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="apropos">
+            <h2>À propos</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Qui suis-je ?</h3>
+                    <p>Passionné par l'informatique depuis mon plus jeune âge, je me spécialise aujourd'hui dans les
+                        solutions d'infrastructure, réseaux et cybersécurité. Mon ambition est de devenir un expert en
+                        sécurité des réseaux et de contribuer à la conception d'environnements informatiques fiables et
+                        protégés.</p>
+                    <p>Actuellement en 2e année de BTS SIO option SISR, je développe mes compétences techniques tout en
+                        acquérant une solide expérience pratique à travers mes stages et réalisations personnelles.</p>
+                </div>
+                <div class="fade-in">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem;">Mes compétences</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">🌐</div>
+                            <h4>Réseaux</h4>
+                            <p>Configuration, administration</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">🐧</div>
+                            <h4>Linux</h4>
+                            <p>Administration système</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">🔒</div>
+                            <h4>Cybersécurité</h4>
+                            <p>Sécurisation, Protection des systèmes</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">☁️</div>
+                            <h4>Virtualisation</h4>
+                            <p>vmware workstation pro</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">🔧</div>
+                            <h4>Cisco</h4>
+                            <p>Routage, commutation</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">🖥️</div>
+                            <h4>Windows Server</h4>
+                            <p>AD, DNS, DHCP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="parcours">
+            <h2>Mon Parcours</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <h3 class="timeline-title">Baccalauréat Général</h3>
+                    <p class="timeline-company">Lycée Nour El Hiba - El Kelâa des Sraghna</p>
+                    <p class="timeline-description">Sciences Physiques & Mathématiques. Obtention du baccalauréat avec mention.</p>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2024 - 2026</div>
+                    <h3 class="timeline-title">BTS SIO Option SISR</h3>
+                    <p class="timeline-company">Ecole AFTEC Rennes - Rennes</p>
+                    <p class="timeline-description">Formation de deux ans orientée vers l'administration des systèmes et réseaux, la sécurité informatique et le support aux utilisateurs.</p>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">juillet -août 2025</div>
+                    <h3 class="timeline-title">Stage en support et maintenance informatique</h3>
+                    <p class="timeline-company">MonsieurCyberMan - Redon</p>
+                    <p class="timeline-description">Participation à la maintenance, reconditionnement et configuration d'ordinateurs, ainsi qu'à la gestion et au test de matériel informatique.</p>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">septembre</div>
+                    <h3 class="timeline-title">Stage en administration et maintenance des réseaux informatiques</h3>
+                    <p class="timeline-company">Breizhtic - Montauban-de-Bretagne</p>
+                    <p class="timeline-description">Participation à la modernisation du réseau de l'entreprise : configuration VLAN, déploiement Wi-Fi UniFi sécurisé et optimisation d'un serveur Fujitsu.</p>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">janvier -février</div>
+                    <h3 class="timeline-title">Stage en maintenance informatique</h3>
+                    <p class="timeline-company">Arobace - Rennes</p>
+                    <p class="timeline-description">Durant mon stage chez Arobase, j’ai réalisé des interventions chez des entreprises locales, assuré la maintenance informatique et répondu aux appels téléphoniques des clients.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION RÉALISATIONS -->
+        <section id="realisations">
+            <h2>Mes Réalisations Techniques</h2>
+            <div class="realisations-container">
+                
+                <!-- Réalisation 1 -->
+                <div class="realisation-card fade-in">
+                    <h3 class="realisation-title">Analyse de la couche physique (Modèle OSI – Couche 1)</h3>
+                    <p class="realisation-description">
+                        Durant mon stage, j’ai réalisé une analyse de la couche physique du modèle OSI au sein de la boutique de l’entreprise. Cette analyse a porté sur les équipements matériels du réseau,
+                        tels que les postes informatiques, les câbles, les prises réseau, les alimentations et les périphériques, afin d’avoir une vision globale de l’infrastructure existante.
+                    </p>
+                    <div class="realisation-action">
+                        <a href="realisation/couche physique .pdf" class="btn-download" target="_blank">
+                            📄 Voir le rapport PDF
+                        </a>
+                    </div>
+                </div>
+
+                
+                
+                <!-- Réalisation 2 -->
+                <div class="realisation-card fade-in">
+                    <h3 class="realisation-title">Modernisation du réseau de l’entreprise</h3>
+                    <p class="realisation-description">
+                        Durant mon stage, j’ai proposé une architecture de modernisation du réseau de l’entreprise afin d’améliorer son organisation et sa segmentation. Cette proposition s’est appuyée sur une configuration approximative de VLANs réalisée avec Cisco Packet Tracer, comprenant trois réseaux distincts : VLAN 10 (Accueil), VLAN 20 (Technique) et VLAN 30 (Direction). 
+                        Ce travail a permis de représenter et structurer le réseau de manière plus claire et cohérente.
+                        
+                    </p>
+                    <div class="realisation-action">
+                        <a href="realisation/Modernisation du réseau.pdf" class="btn-download" target="_blank">
+                            📄 Voir le rapport PDF
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Réalisation 3 -->
+                <div class="realisation-card fade-in">
+                    <h3 class="realisation-title">Configuration d’un switch et d’un point d’accès Wi-Fi</h3>
+                    <p class="realisation-description">
+                        J’ai configuré un switch et un point d’accès Wi-Fi pour la boutique de l’entreprise. Cette mission comprend la mise en place des SSID, l’association des réseaux Wi-Fi aux VLAN correspondants,
+                         la création de QR Codes pour faciliter la connexion, ainsi que le nommage et l’affectation des ports du switch selon les zones de la boutique. 
+                        Cette configuration permet une organisation claire et fonctionnelle du réseau.
+                    </p>
+                    <div class="realisation-action">
+                        <a href="realisation/unifi .pdf" class="btn-download" target="_blank">
+                            📄 Voir le rapport PDF
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Réalisation 4 -->
+                <div class="realisation-card fade-in">
+                    <h3 class="realisation-title">Mise en place d’un QR Code Wi-Fi afin de simplifier la connexion des clients au réseau de l’entreprise.</h3>
+                    <p class="realisation-description">
+                        Dans le cadre du support informatique, j’ai mis en place un QR Code Wi-Fi pour les clients de la boutique afin de faciliter 
+                        leur connexion au réseau. Cette solution permet un accès rapide sans saisie des identifiants, réduit les demandes d’assistance et améliore l’expérience utilisateur.
+                    </p>
+                    <div class="realisation-action">
+                        <a href="realisation/Connection Wifi.pdf" class="btn-download" target="_blank">
+                            📄 Voir le rapport PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="epreuves">
+            <h2>Épreuves du BTS SIO</h2>
+            <p
+                style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Cette section regroupe les preuves de mes compétences acquises, présentées dans le cadre des épreuves
+                E5 et E6 du BTS SIO.
+            </p>
+
+            <div class="epreuves-tabs">
+                <button class="tab-btn active" data-tab="e5">E5 – Production de service</button>
+                <button class="tab-btn" data-tab="e6">E6 – Parcours professionnel</button>
+            </div>
+
+            <div class="tab-content active" id="e5-content">
+                <div class="epreuve-header">
+                    <h3>E5 – Support et services informatiques</h3>
+                    <p>L'épreuve E5 met en avant mes réalisations professionnelles démontrant mes compétences techniques en support informatique.</p>
+                    
+                    <!-- Ligne de séparation -->
+                    <div style="height: 2px; background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent); margin: 2rem auto; width: 80%;"></div>
+                    
+                    <!-- Tableau de synthèse -->
+                    <div class="e5-synthesis-card">
+                        <h4 style="color: var(--text-primary); font-size: 1.35rem; margin-bottom: 1rem;">
+                            <strong>Téléchargez le tableau de synthèse de l'épreuve E5</strong>
+                        </h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.8rem; font-size: 1.05rem;">
+                            Fichier présentant mes réalisations professionnelles et les compétences mobilisées en support informatique
+                        </p>
+                        <a href="E5_Exel/E5_Exel.pdf" class="btn btn-primary" target="_blank" 
+                           style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.95rem 2rem; font-size: 1.05rem;">
+                            🗂️ Voir le fichier E5
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DEBUT - NOUVELLE SECTION PROJETS E5 -->
+                <div class="e5-projects-section">
+                    <h3 style="text-align: center; color: var(--accent-cyan); margin: 3rem 0 2rem 0;">Projets E5</h3>
+                    
+                    <div class="projects-accordion">
+                        <!-- Projet A01 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="a01">A01-Gestion des tickets avec GLPI (création, suivi, résolution)</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Gestion des tickets avec GLPI</h4>
+                                    <p>J'ai utilisé l'outil professionnel GLPI pour gérer des tickets d'assistance, comme on le ferait dans un service informatique réel. J'ai appris à créer, classer et prioriser des demandes, à communiquer avec les utilisateurs pour comprendre leur problème, puis à suivre et résoudre les incidents jusqu'à la clôture. Ce travail m'a permis de développer des compétences essentielles du support informatique : organisation, traçabilité, compréhension des besoins utilisateurs et respect des procédures.
+                                       Les captures d'écran que je présente montrent les étapes principales : la création du ticket, le suivi de la demande et la réponse apportée à l'utilisateur</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('a01', 0)">
+                                        <img src="E5_photos/GLPI1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a01', 1)">
+                                        <img src="E5_photos/GLPI2.png" alt="Capture GLPI - Suivi de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet A02 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="a02">A02-Déboguer des sites internet</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Déboguer des sites internet</h4>
+                                    <p>Dans le cadre du support informatique, j'ai réalisé des actions de débogage de pages web, comme illustré dans les captures d'écran, afin de corriger des erreurs et des avertissements détectés lors de la validation du code HTML et CSS. Ce travail permet d'améliorer la conformité du site, de corriger les problèmes d'affichage et d'assurer l'accès correct aux services pour les utilisateurs. 
+                                        Cette activité s'inscrit dans la réponse aux incidents et aux demandes d'assistance liés aux services numériques.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('a02', 0)">
+                                        <img src="E5_photos/W3C1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a02', 1)">
+                                        <img src="E5_photos/W3C2.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet A03 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="a03">A03-Support et interventions à distance via SSH</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Support et interventions à distance via SSH</h4>
+                                    <p>Dans le cadre du support informatique, les interventions à distance via SSH permettent de répondre efficacement aux incidents et aux demandes d'assistance sans déplacement physique. Cette compétence consiste à se connecter de manière sécurisée aux serveurs ou aux postes distants afin de diagnostiquer des dysfonctionnements, appliquer des corrections, effectuer des mises à jour ou vérifier l'état des services.
+                                     Elle contribue à assurer la continuité de service, la rapidité d'intervention et l'accès permanent aux ressources informatiques pour les utilisateurs.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('a03', 0)">
+                                        <img src="E5_photos/ssh1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a03', 1)">
+                                        <img src="E5_photos/ssh2.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet A04 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="a04">A04-Création et mise en ligne de mon portfolio</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Création et mise en ligne de mon portfolio</h4>
+                                    <p>La création et la mise en ligne de mon portfolio relèvent du support informatique par la gestion d'un service numérique en ligne. Cette activité mobilise des compétences liées au support informatique, telles que la mise en ligne du site, l'organisation des fichiers sur le serveur, la structuration du code et la correction d'erreurs afin d'assurer l'accessibilité et la disponibilité du service pour les utilisateurs. Elle met également en œuvre l'ensemble des compétences de support informatique acquises au cours de mes deux années de BTS, notamment l'organisation, la documentation et la présentation claire des interventions. 
+                                    Les captures d'écran présentées illustrent la réalisation de ces actions.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('a04', 0)">
+                                        <img src="E5_photos/porfolio1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a04', 1)">
+                                        <img src="E5_photos/porfolio2.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a04', 2)">
+                                        <img src="E5_photos/porfolio3.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet A05 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="a05">A05-Gestion et dépannage des comptes utilisateurs, postes et services du domaine (AD DS, DNS).</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Gestion et dépannage des comptes utilisateurs, postes et services du domaine (AD DS, DNS)</h4>
+                                    <p>La mise en place et l'administration d'un domaine Active Directory s'inscrivent pleinement dans le support informatique à travers la gestion et le dépannage des comptes utilisateurs, des postes et des services réseau. Cette activité comprend l'installation des rôles AD DS et DNS, l'intégration des postes au domaine, ainsi que la création et l'organisation des unités d'organisation, des utilisateurs et des groupes afin d'assurer un accès sécurisé et fonctionnel aux ressources du domaine.
+                                    Les captures d'écran présentées illustrent la configuration du domaine, l'intégration des postes clients et la structuration de l'annuaire Active Directory. 
+                                   Cette compétence met en œuvre des actions concrètes de support informatique visant à garantir l'authentification des utilisateurs, la disponibilité des services réseau et la résolution des incidents liés à l'environnement de domaine.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('a05', 0)">
+                                        <img src="E5_photos/AD1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a05', 1)">    
+                                        <img src="E5_photos/AD2.png" alt="Capture GLPI - Création de ticket">
+                                        </div>
+                                    <div class="project-image" onclick="openLightbox('a05', 2)">
+                                        <img src="E5_photos/AD3.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet A06 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="a06">A06 – Mise en place des mentions légales sur mon portfolio afin d’assurer la conformité aux obligations réglementaires</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Mise en place des mentions légales sur mon portfolio afin d’assurer la conformité aux obligations réglementaires</h4>
+                                    <p>Dans le cadre de mon projet de portfolio en ligne, j’ai mis en place les mentions légales afin de garantir la conformité du site avec les obligations réglementaires en vigueur.
+                                    Cette démarche relève du support informatique, car elle consiste à assurer la mise à disposition d’un service numérique fiable, sécurisé et conforme pour les utilisateurs. J’ai ainsi intégré les informations obligatoires telles que l’identité de l’éditeur du site, les coordonnées de contact, l’hébergeur, ainsi que les règles liées à la protection des données personnelles (RGPD). Cette mise en conformité permet de protéger les utilisateurs, de renforcer la transparence du service et de prévenir les risques juridiques, tout en garantissant le bon fonctionnement et la crédibilité du site web.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('a07', 0)">
+                                         <img src="E5_photos/legal1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a07', 1)">
+                                         <img src="E5_photos/legal2.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet A07 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="a07">A07-Création et mise en ligne du profil LinkedIn dans le cadre du BTS SIO</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Création et mise en ligne du profil LinkedIn dans le cadre du BTS SIO</h4>
+                                    <p>La création et la mise en ligne de mon profil LinkedIn s'inscrivent dans le support informatique et le développement professionnel en permettant de communiquer avec des professionnels du support et des services informatiques. 
+                                     Ce profil me permet de présenter clairement mes compétences techniques, mes expériences de stage et les missions réalisées en support informatique.
+                                      Cette activité facilite les échanges avec des professionnels du secteur, la valorisation des compétences acquises durant le BTS SIO et l'accès à des opportunités liées aux métiers du support informatique.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('a07', 0)">
+                                         <img src="E5_photos/linkedin1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('a07', 1)">
+                                         <img src="E5_photos/linkedin2.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                 
+                       
+
+                        <!-- Projet B01 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="b01">B01-Diagnostic et résolution d'incidents matériels</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Diagnostic et résolution d'incidents matériels</h4>
+                                    <p>Cette activité s'inscrit pleinement dans le support informatique à travers le diagnostic et la résolution d'incidents matériels sur des postes utilisateurs. J'ai réalisé des interventions de maintenance telles que l'ouverture des unités centrales, le contrôle et le remplacement de composants (disque dur, alimentation, mémoire), ainsi que des vérifications au niveau du BIOS pour identifier l'origine des pannes.
+                                    Les captures d'écran illustrent les étapes de diagnostic, les manipulations matérielles et les tests effectués afin de rétablir le bon fonctionnement des équipements et garantir la continuité du service pour les utilisateurs.
+                                    Cette compétence contribue directement à l'assistance technique, à la disponibilité du matériel et à la qualité du support informatique en environnement professionnel.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('b01', 0)">
+                                        <img src="E5_photos/diagnostic1.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b01', 1)">
+                                        <img src="E5_photos/diagnostic2.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b01', 2)">
+                                        <img src="E5_photos/diagnostic3.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet B02 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="b02">B02-Maintenance préventive et corrective</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Maintenance préventive et corrective</h4>
+                                    <p>La maintenance préventive et corrective fait pleinement partie du support informatique. J'ai réalisé des interventions matérielles visant à prévenir les pannes et à rétablir le bon fonctionnement des postes, telles que le nettoyage interne des unités centrales, le remplacement de composants défectueux (disque dur, ventilateur, alimentation) et la vérification des connexions. Ces actions permettent d'améliorer la fiabilité du matériel, d'éviter les interruptions de service et d'assurer la continuité de travail des utilisateurs. 
+                                    Les captures d'écran illustrent les différentes opérations de maintenance réalisées dans un contexte professionnel.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('b02', 0)">
+                                        <img src="E5_photos/main1.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b02', 1)">
+                                        <img src="E5_photos/main2.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b02', 2)">
+                                        <img src="E5_photos/main3.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b02', 2)">
+                                        <img src="E5_photos/main4.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet B03 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="b03">B03-Installation de Windows 10 et Windows 11 sur un SSD</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Installation de Windows 10 et Windows 11 sur un SSD</h4>
+                                    <p>Cette activité relève du support informatique par la préparation, l'installation et la remise en service de postes utilisateurs. J'ai réalisé l'installation de Windows 10 et Windows 11 sur des SSD, incluant le partitionnement, le déploiement du système, les mises à jour et la vérification du bon fonctionnement du poste.
+                                     Ces interventions permettent d'améliorer les performances, la fiabilité et la disponibilité des équipements, tout en assurant une remise en état rapide des postes pour les utilisateurs. Les captures d'écran illustrent les différentes étapes de l'installation et de la validation du système, caractéristiques des missions de support informatique.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('b03', 0)">
+                                      <img src="E5_photos/ssd0.jpg" alt="Capture GLPI - Création de ticket">
+                                      </div>
+                                      <div class="project-image" onclick="openLightbox('b03', 1)">
+                                        <img src="E5_photos/ssd1.jpg" alt="Capture GLPI - Création de ticket">
+                                      </div>
+                                      <div class="project-image" onclick="openLightbox('b03', 2)">
+                                        <img src="E5_photos/ssd2.jpg" alt="Capture GLPI - Création de ticket">
+                                      </div>
+                                      <div class="project-image" onclick="openLightbox('b03', 3)">
+                                        <img src="E5_photos/ssd3.jpg" alt="Capture GLPI - Création de ticket">
+                                        </div>
+                                        <div class="project-image" onclick="openLightbox('b03', 4)">
+                                        <img src="E5_photos/ssd4.jpg" alt="Capture GLPI - Création de ticket">
+                                        </div>
+                                         </div>
+                                     </div>
+                                  </div>
+                        <!-- Projet B04 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="b04">B04-Préparation et mise en service des équipements</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Préparation et mise en service des équipements</h4>
+                                    <p>Dans le cadre des missions de support informatique, j’ai pris en charge la préparation complète de postes de travail, incluant l’installation de Windows 10 et Windows 11 sur SSD, l’ajout et le remplacement de composants matériels (mémoire RAM, processeur, pile, la configuration du BIOS ainsi que l’application des mises à jour du système. Cette préparation a également été réalisée en amont afin de constituer un stock de postes prêts à l’emploi, permettant de répondre rapidement aux demandes des clients et d’assurer une livraison dans les meilleurs délais. Chaque équipement a été contrôlé et testé afin de garantir un fonctionnement optimal avant sa mise à disposition.
+                                </div>
+                                <div class="project-images-grid">
+                                     <div class="project-image" onclick="openLightbox('b04', 0)">
+                                        <img src="E5_photos/mise0.jpg" alt="Capture GLPI - Création de ticket">
+                                        </div>
+                                     <div class="project-image" onclick="openLightbox('b04', 1)">
+                                        <img src="E5_photos/mise1.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                     <div class="project-image" onclick="openLightbox('b04', 2)">
+                                        <img src="E5_photos/mise2.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                     <div class="project-image" onclick="openLightbox('b04', 3)">
+                                        <img src="E5_photos/mise3.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                     <div class="project-image" onclick="openLightbox('b04', 4)">
+                                        <img src="E5_photos/mise4.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b04', 5)">
+                                        <img src="E5_photos/mise5.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                             </div>
+                          </div>
+
+                        <!-- Projet B05 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="b05">B05-Organisation, logistique et respect des procédures qualité</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Organisation, logistique et respect des procédures qualité</h4>
+                                    <p>Dans un contexte de gestion de volumes importants de matériel informatique, j'ai contribué à l'organisation logistique et au respect des procédures qualité de l'entreprise. Cette mission comprend le contrôle des livraisons, la vérification des quantités reçues (postes, barrettes RAM, processeurs, disques SSD/HDD), la comparaison avec les bons de réception et le signalement des écarts éventuels. 
+                                    J'ai également participé au tri, à l'identification et au stockage du matériel sur chariots et palettes, en appliquant des méthodes rigoureuses afin d'assurer la traçabilité, la fiabilité des stocks et la conformité des opérations.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('b05', 0)">
+                                        <img src="E5_photos/organisation0.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 1)">
+                                        <img src="E5_photos/organisation1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 2)">
+                                        <img src="E5_photos/organisation2.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 3)">
+                                        <img src="E5_photos/organisation3.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 4)">
+                                        <img src="E5_photos/organisation4.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 5)">
+                                        <img src="E5_photos/organisation5.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 6)">
+                                        <img src="E5_photos/organisation6.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 7)">
+                                        <img src="E5_photos/organisation7.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b05', 8)">
+                                        <img src="E5_photos/organisation8.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet B06 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="b06">B06-Gestion du parc informatique</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Gestion du parc informatique</h4>
+                                    <p>J'ai participé à la gestion du parc informatique en traitant les commandes liées aux demandes des clients. J'ai réceptionné et vérifié les factures associées, puis réalisé les commandes en fonction des équipements demandés par les clients (processeur, mémoire RAM, disque SSD, système d'exploitation Windows, etc.). Cette activité comprend le suivi des commandes, l'identification du matériel et son intégration dans le parc informatique. 
+                                        Les captures d'écran et documents présentés illustrent la gestion des factures, des commandes et l'organisation du matériel au sein de l'entreprise.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('b06', 0)">
+                                        <img src="E5_photos/ges1.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b06', 1)">
+                                        <img src="E5_photos/ges2.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b06', 2)">
+                                        <img src="E5_photos/ges3.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b06', 3)">
+                                        <img src="E5_photos/ges4.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b06', 4)">
+                                        <img src="E5_photos/ges5.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b06', 5)">
+                                        <img src="E5_photos/ges6.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b06', 6)">
+                                        <img src="E5_photos/ges7.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet B07 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="b07">B07-Réception et contrôle des SSD</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Réception et contrôle des SSD</h4>
+                                    <p>Dans le cadre du contrôle du matériel informatique, j'ai réalisé la vérification de l'état des disques SSD avant leur utilisation ou leur intégration dans les postes clients. À l'aide d'outils logiciels tels que CrystalDiskInfo et la gestion des disques Windows, j'ai contrôlé l'état de santé des SSD (SMART), la température, le nombre d'heures de fonctionnement ainsi que la bonne détection des partitions. 
+                                    Cette étape permet de garantir la fiabilité des supports de stockage mis à disposition des clients.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('b07', 0)">
+                                        <img src="E5_photos/rec1.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                    <div class="project-image" onclick="openLightbox('b07', 1)">
+                                        <img src="E5_photos/rec2.png" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet C01 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="c01">C01-Mise en place d'un QR Code Wi-Fi et assistance aux clients pour la connexion</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Mise en place d'un QR Code Wi-Fi et assistance aux clients pour la connexion</h4>
+                                    <p>Dans le cadre du support informatique en boutique, j'ai mis en place un service facilitant l'accès au réseau Wi-Fi pour les clients. J'ai créé un QR Code Wi-Fi permettant une connexion rapide et sécurisée au réseau de l'entreprise, sans saisie manuelle du mot de passe. Ce QR Code a ensuite été imprimé et affiché sur le mur de la boutique afin d'être facilement accessible aux clients.
+                                         Cette action permet de simplifier l'accès au réseau et de mettre à disposition un service informatique fonctionnel pour les utilisateurs.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('c01', 0)">
+                                        <img src="E5_photos/Wifi.jpg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Projet C02 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="c02">C02-Accueil des clients et recueil de leurs besoins afin de comprendre et qualifier leurs problèmes informatiques</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Accueil des clients et recueil de leurs besoins afin de comprendre et qualifier leurs problèmes informatiques</h4>
+                                    <p>Dans le cadre de mes missions en support informatique, j’ai assuré l’accueil des clients en recueillant leurs besoins afin de comprendre et qualifier leurs problèmes informatiques. Cette compétence consiste à analyser les demandes des utilisateurs, à identifier précisément l’origine des dysfonctionnements (matériel, logiciel ou réseau), 
+                                    puis à proposer des solutions adaptées à chaque situation. J’ai ainsi été amené à échanger directement avec les clients, à reformuler leurs besoins pour éviter toute incompréhension, et à orienter les actions de dépannage ou d’installation.
+                                     Cette activité s’inscrit pleinement dans le support informatique, car elle vise à accompagner les utilisateurs, à résoudre leurs incidents et à garantir la continuité de l’utilisation des services informatiques.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('b07', 0)">
+                                        <img src="E5_photos/acceuil.jpeg" alt="Capture GLPI - Création de ticket">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    <!-- Projet C03 -->
+<div class="project-item">
+    <button class="project-btn" data-project="c03">C03 – Intervention chez des entreprises locales pour l'installation et la configuration de postes informatiques</button>
+    <div class="project-content">
+        <div class="project-description">
+            <h4>Intervention chez des entreprises locales pour l'installation et la configuration de postes informatiques</h4>
+            <p>Dans le cadre de mes missions en support informatique, j'ai réalisé des interventions au sein d'entreprises locales pour l'installation et la configuration de postes informatiques. Cette activité consistait à mettre en place des ordinateurs fonctionnels en installant le système d'exploitation Windows, en configurant les paramètres nécessaires (comptes utilisateurs, réseau, mises à jour) et en installant les logiciels indispensables (navigateurs, logiciels spécifiques). Cette compétence s'inscrit pleinement dans le support informatique, car elle vise à rendre les équipements opérationnels, à répondre aux besoins des utilisateurs et à garantir la mise à disposition d'un service informatique fiable et adapté.</p>
+        </div>
+        <div class="project-images-grid">
+            <div class="project-image" onclick="openLightbox('c03', 0)">
+                <img src="E5_photos/inter1.jpeg" alt="Capture GLPI - Création de ticket">
+            </div>
+            <div class="project-image" onclick="openLightbox('c03', 1)">
+                <img src="E5_photos/inter2.jpeg" alt="Capture GLPI - Création de ticket">
+            </div>
+            <div class="project-image" onclick="openLightbox('c03', 2)">
+                <img src="E5_photos/inter3.png" alt="Capture GLPI - Création de ticket">
+            </div>
+            <div class="project-image" onclick="openLightbox('c03', 3)">
+                <img src="E5_photos/inter4.png" alt="Capture GLPI - Création de ticket">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Projet C04 -->
+<div class="project-item">
+    <button class="project-btn" data-project="c04">C04 – Test des composants (CPU, RAM, GPU) pour diagnostiquer un problème de performance ou de surchauffe</button>
+    <div class="project-content">
+        <div class="project-description">
+            <h4>Test des composants (CPU, RAM, GPU) pour diagnostiquer un problème de performance ou de surchauffe</h4>
+            <p>Dans le cadre de mes missions en support informatique, j'ai réalisé des tests sur les composants matériels des postes clients (CPU, RAM, GPU) afin de diagnostiquer des problèmes de performance ou de surchauffe. Pour cela, j'ai utilisé des outils spécialisés tels que OCCT pour solliciter le processeur et la mémoire à pleine charge, ainsi que FurMark pour tester intensivement la carte graphique. Ces tests de stress permettent de reproduire les conditions d'utilisation extrêmes afin d'identifier l'origine des dysfonctionnements (ralentissements, surchauffe, instabilité). À partir des résultats obtenus, j'ai pu proposer des solutions adaptées comme le nettoyage du système, l'amélioration du refroidissement ou le remplacement de composants défectueux. Cette activité relève du support informatique, car elle vise à résoudre les incidents rencontrés par les utilisateurs, mais également de la gestion du patrimoine informatique en assurant le bon fonctionnement et la maintenance des équipements.</p>
+        </div>
+        <div class="project-images-grid">
+            <div class="project-image" onclick="openLightbox('c04', 0)">
+                <img src="E5_photos/GPU1.jpeg" alt="Capture GPU 1">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 1)">
+                <img src="E5_photos/GUP2.jpeg" alt="Capture GPU 2">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 2)">
+                <img src="E5_photos/GPU3.jpeg" alt="Capture GPU 3">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 3)">
+                <img src="E5_photos/GPU4.jpeg" alt="Capture GPU 4">
+            </div>
+        </div>
+    </div>
+</div>
+
+                   
+
+                        <!-- Projet C05 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="c05">C05-Préparation d’un poste client neuf : installation de Windows, des logiciels (Adobe, Chrome…) et réalisation des mises à jour afin de le rendre opérationnel</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Préparation d’un poste client neuf : installation de Windows, des logiciels (Adobe, Chrome…) et réalisation des mises à jour afin de le rendre opérationnel</h4>
+                                    <p>Dans le cadre de mes missions en support informatique, j’ai réalisé la préparation de postes clients neufs destinés à des utilisateurs en entreprise. Cette activité consistait à installer le système d’exploitation Windows,
+                                         à configurer les paramètres initiaux (connexion réseau, comptes utilisateurs, mises à jour) et à installer les logiciels nécessaires tels que Google Chrome, Adobe Acrobat Reader ou encore des extensions comme bloqueur de publicités. J’ai également 
+                                         veillé à effectuer les mises à jour du système afin de garantir la sécurité et la stabilité du poste. Cette compétence relève du support informatique, car elle permet de rendre le poste immédiatement opérationnel pour le client, 
+                                        de répondre à ses besoins et d’assurer la mise à disposition d’un service informatique fiable et adapté à son utilisation.</p>
+                                </div>
+                                <div class="project-images-grid">
+            <div class="project-image" onclick="openLightbox('c04', 0)">
+                <img src="E5_photos/win1.jpeg" alt="Capture GPU 1">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 1)">
+                <img src="E5_photos/win2.jpeg" alt="Capture GPU 2">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 2)">
+                <img src="E5_photos/win3.jpeg" alt="Capture GPU 3">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 3)">
+                <img src="E5_photos/win4.png" alt="Capture GPU 4">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 4)">
+                <img src="E5_photos/win5.png" alt="Capture GPU 4">
+            </div>
+            <div class="project-image" onclick="openLightbox('c04', 5)">
+                <img src="E5_photos/win6.png" alt="Capture GPU 4">
+            </div>
+        </div>
+    </div>
+</div>
+
+                        <!-- Projet C06 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="c06">C06-Réponse aux appels clients et identification de leurs problèmes informatiques</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Réponse aux appels clients et identification de leurs problèmes informatiques</h4>
+                                    <p>Dans le cadre de mes missions en support informatique, j’ai été amené à répondre aux appels téléphoniques des clients afin d’identifier leurs problèmes informatiques et de les orienter vers des solutions adaptées. En l’absence du responsable,
+                                         je prenais en charge le téléphone fixe de l’entreprise pour assurer la continuité du service, en recueillant les demandes des clients,
+                                         en reformulant leurs besoins et en leur apportant des premières réponses ou des informations sur l’avancement de la résolution de leur problème. Cette activité relève du support informatique, car elle permet d’assurer une assistance directe aux utilisateurs, 
+                                        de qualifier les incidents et de garantir une communication efficace entre le client et le service technique.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                 <div class="project-image" onclick="openLightbox('c04', 0)">
+                                    <img src="E5_photos/tele.jpeg" alt="Capture GPU 1">
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet C07 -->
+                        <div class="project-item">
+                            <button class="project-btn" data-project="c07">C07-Migration des données d’un poste ancien vers un poste neuf (documents, fichiers multimédias) afin d’assurer la continuité d’utilisation</button>
+                            <div class="project-content">
+                                <div class="project-description">
+                                    <h4>Migration des données d’un poste ancien vers un poste neuf (documents, fichiers multimédias) afin d’assurer la continuité d’utilisation</h4>
+                                    <p>Dans le cadre de mes missions en support informatique, j’ai réalisé la migration des données d’un poste ancien vers un poste neuf pour des clients. 
+                                        Cette activité consistait à sauvegarder les données (documents, images, vidéos…) à l’aide d’un support externe (disque dur), puis à les transférer et les réintégrer sur le nouveau poste. 
+                                        J’ai veillé à organiser les fichiers et à vérifier leur intégrité afin d’assurer une continuité d’utilisation sans perte de données. Cette compétence relève du support informatique, 
+                                        car elle permet d’accompagner l’utilisateur lors du changement de matériel, 
+                                        de sécuriser ses informations et de garantir une reprise rapide et efficace de son activité sur le nouveau poste.</p>
+                                </div>
+                                <div class="project-images-grid">
+                                    <div class="project-image" onclick="openLightbox('c04', 0)">
+                                    <img src="E5_photos/diddy1.png" alt="Capture GPU 1">
+                                      </div>
+                                      <div class="project-image" onclick="openLightbox('c04', 1)">
+                                    <img src="E5_photos/diddy2.png" alt="Capture GPU 1">
+                                      </div>
+                                      <div class="project-image" onclick="openLightbox('c04', 2)">
+                                    <img src="E5_photos/diddy3.png" alt="Capture GPU 1">
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- FIN - NOUVELLE SECTION PROJETS E5 -->
+            </div>
+
+
+<!-- ===================== E6 CONTENT ===================== -->
+<div class="tab-content" id="e6-content">
+
+  <div class="epreuve-header">
+    <h3>E6 – Administration des systèmes et des réseaux</h3>
+    <p>
+      L'épreuve E6 met en avant mes réalisations professionnelles démontrant mes compétences techniques
+      en conception, déploiement et maintenance d'infrastructures réseau et système.
+    </p>
+  </div>
+
+  <!-- ✅ 1) SCHÉMA RÉSEAU EN HAUT (comme E5) -->
+  <div class="e6-schema">
+    <h4 class="e6-schema-title">Schéma réseau</h4>
+
+    <div class="e6-schema-card">
+      <img
+        src="Diagramme-e6.jpg"
+        alt="Schéma réseau – Projet E6"
+        class="e6-schema-img"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
+    <p class="e6-schema-desc">
+      Vue globale de l’architecture (Hyper-V, VLAN, pfSense, AD/DNS/DHCP, supervision).
+    </p>
+  </div>
+
+  <!-- ✅ 2) LES 3 BLOCS EN DESSOUS -->
+  <div class="e6-cards-grid">
+
+    <!-- Bloc 1 -->
+<div class="e6-card fade-in">
+  <div class="e6-card-icon" style="background: linear-gradient(135deg, #06b6d4, #8b5cf6);">📘</div>
+  <h4>Fiche descriptive projet 1</h4>
+  <p>Présentation du contexte et déploiement d’Active Directory (DNS/DHCP)</p>
+  <button class="btn btn-secondary"
+    onclick="openCertModal('222-annexes 7-1-A.pdf', 'Active Directory (DNS/DHCP)')">
+    📄 Voir le document
+  </button>
+   </div>
+
+
+<div class="e6-card fade-in">
+  <div class="e6-card-icon" style="background: linear-gradient(135deg, #f97316, #fb923c);">📘</div>
+  <h4>Fiche descriptive projet 2</h4>
+  <p>Dans ce contexte, j’ai créé des VLANs pour organiser et sécuriser le réseau</p>
+  <button class="btn btn-secondary"
+    onclick="openCertModal('2233-annexes 7-1-A.pdf', 'Projet VLAN')">
+    📄 Voir le document
+  </button>
+</div>
+
+    <!-- Bloc 2 -->
+<div class="e6-card fade-in">
+  <div class="e6-card-icon" style="background: linear-gradient(135deg, #4c1d95, #6d28d9);">📜</div>
+  <h4>Attestation de 1er stage</h4>
+  <p>Justificatif de ma première expérience en entreprise chez MonsieurCyberman</p>
+  <button class="btn btn-secondary"
+    onclick="openCertModal('E5_Exel/Attestation_Stage_1_BTS_SIO.pdf', 'Rapport de stage - BREIZHTIC')">
+    📄 Voir le document
+  </button>
+</div>
+
+<!-- Bloc 3 -->
+<div class="e6-card fade-in">
+  <div class="e6-card-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a);">📜</div>
+  <h4>Attestation de 2e stage</h4>
+  <p>Justificatif de ma deuxième expérience en entreprise chez Breizhtic</p>
+  <button class="btn btn-secondary"
+    onclick="openCertModal('E5_Exel/Attestation_Stage_2_BTS_SIO.pdf', 'Présentation E6 - Soutenance')">
+    📄 Voir le document
+  </button>
+</div>
+
+<!-- Bloc 4 -->
+<div class="e6-card fade-in">
+  <div class="e6-card-icon" style="background: linear-gradient(135deg, #dc2626, #ef4444);">📜</div>
+  <h4>Attestation de 3e stage</h4>
+  <p>Justificatif de ma troisième expérience en entreprise chez Arobace</p>
+  <button class="btn btn-secondary"
+    onclick="openCertModal('E5_Exel/Attestation_Stage_3_BTS_SIO.pdf', 'Présentation E6 - Soutenance')">
+    📄 Voir le document
+  </button>
+</div>
+</div>
+
+
+
+<!-- ===================== /E6 CONTENT ===================== -->
+        </div>
+        </section>
+
+        <section id="veilles">
+            <h2>Veilles Technologiques</h2>
+            <p
+                style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Suivi des tendances technologiques, notamment en cybersécurité et intelligence artificielle, pour
+                anticiper les évolutions du secteur IT.
+            </p>
+
+            <div class="veilles-filter">
+                <button class="filter-btn" data-filter="cyber-ai">Cyber-AI</button>
+            </div>
+
+            <div class="veilles-grid">
+                <article class="veille-card fade-in" data-category="cyber-ai">
+                    <div class="veille-meta">
+                        <span class="veille-date">septembre 2025</span>
+                        <span class="veille-tag cyber-ai">Cyber-AI</span>
+                    </div>
+                    <h3>Des pirates informatiques exploitent l'image de l'intelligence artificielle pour diffuser des malwares</h3>
+                    <p>Des cybercriminels ont lancé une campagne mondiale appelée EvilAI, dans laquelle des logiciels malveillants sont déguisés en faux outils d'intelligence artificielle ou de productivité.
+                    Ces programmes paraissent légitimes (interface professionnelle, signatures numériques valides) et fonctionnent normalement, ce qui trompe les utilisateurs.
+                    Une fois installés, ils permettent aux attaquants d'espionner les systèmes, voler des données sensibles (navigateurs, identifiants) et de maintenir un accès discret pour de futures attaques.
+                    Cette menace montre comment la popularité de l'IA est exploitée pour diffuser des malwares difficiles à détecter.</p>
+                    <a href="https://thehackernews.com/2025/09/evilai-malware-masquerades-as-ai-tools.html" class="btn btn-secondary">🔗 Lire l'article</a>
+                </article>
+                <article class="veille-card fade-in" data-category="cyber-ai">
+                    <div class="veille-meta">
+                        <span class="veille-date">novembre 2025</span>
+                        <span class="veille-tag cyber-ai">Cyber-AI</span>
+                    </div>
+                    <h3>L'intelligence artificielle utilisée pour automatiser des cyberattaques d'espionnage</h3>
+                    <p>Des acteurs malveillants liés à l'État chinois ont mené une campagne d'espionnage informatique en détournant une intelligence artificielle de développement (Claude d'Anthropic).
+                    Contrairement aux attaques classiques, l'IA n'a pas seulement assisté les pirates : elle a automatisé la majorité des étapes de l'attaque, comme la reconnaissance, la recherche de failles, l'exploitation et l'exfiltration de données, avec une supervision humaine minimale.
+                    Cette affaire illustre une nouvelle évolution des cybermenaces, où l'IA devient un outil central pour mener des attaques complexes à grande échelle, réduisant fortement les barrières techniques pour les attaquants.</p>
+                    <a href="https://thehackernews.com/2025/11/chinese-hackers-use-anthropics-ai-to.html" class="btn btn-secondary">🔗 Lire l'article</a>
+                </article>
+                <article class="veille-card fade-in" data-category="cyber-ai">
+                    <div class="veille-meta">
+                        <span class="veille-date">Août 2025</span>
+                        <span class="veille-tag cyber-ai">Cyber-AI</span>
+                    </div>
+                    <h3>Une faille critique dans l'IA Gemini de Google exploitée sans aucune interaction utilisateur</h3>
+                    <p>
+    Cet article présente une faille de sécurité importante découverte dans Gemini Enterprise,
+    l'intelligence artificielle de Google utilisée en entreprise. Cette vulnérabilité, appelée
+    GeminiJack, permettait à un attaquant d'accéder à des données sensibles
+    (emails, documents et calendriers) sans aucune action de la part de l'utilisateur.
+    Il s'agissait d'une attaque dite « 0-click ».
+</p>
+
+<p>
+    Le problème venait de la manière dont l'IA est conçue. Gemini Enterprise analyse
+    automatiquement les emails, documents et agendas de l'entreprise afin d'aider les employés
+    dans leurs recherches, ce qui a créé une faiblesse de sécurité.
+</p>
+
+<h4>Fonctionnement de l'attaque</h4>
+<p>
+    L'attaquant pouvait introduire un document piégé dans l'environnement de l'entreprise
+    en utilisant des moyens légitimes, comme le partage d'un document Google ou l'envoi
+    d'une invitation Google Calendar. Ce document contenait une instruction invisible pour
+    l'utilisateur mais interprétée par l'IA.
+</p>
+
+<p>
+    Lorsqu'un employé posait une question classique à Gemini, l'IA analysait tous les documents
+    accessibles et exécutait l'instruction cachée, croyant qu'il s'agissait d'une commande normale.
+</p>
+
+<h4>Conséquences et enseignements</h4>
+<p>
+    Cette attaque permettait l'accès à un grand volume de données internes, envoyées discrètement
+    à l'attaquant sans alerte visible. Google a corrigé la faille rapidement.
+    Cet incident montre que les IA d'entreprise peuvent devenir des sources de fuite de données
+    si les contenus qu'elles analysent ne sont pas strictement contrôlés, et met en évidence
+    les risques liés à l'injection indirecte de commandes.
+</p>
+
+    </p>
+                    <a href="https://hackread.com/geminijack-0-click-flaw-gemini-ai-data-leaks/" class="btn btn-secondary">🔗 Lire l'article</a>
+                </article>
+                <article class="veille-card fade-in" data-category="cyber-ai">
+                    <div class="veille-meta">
+                        <span class="veille-date">decembre 2024</span>
+                        <span class="veille-tag cyber-ai">Cyber-AI</span>
+                    </div>
+                    <h3>L'IA générative détournée pour faciliter les cyberattaques</h3>
+                    <p>OpenAI a confirmé que des cybercriminels utilisent ChatGPT pour assister leurs activités malveillantes, notamment la création de malwares, le développement de scripts et la préparation d'attaques de phishing. 
+                        Plusieurs groupes organisés, dont des acteurs chinois et iraniens, ont exploité l'outil pour analyser des vulnérabilités, masquer du code et planifier des attaques. Bien que ChatGPT n'apporte pas de nouvelles capacités techniques aux pirates, son utilisation rend les cyberattaques plus rapides et accessibles, y compris pour des acteurs peu expérimentés.</p>
+                    <a href="https://cybersafe.news/openai-confirms-hackers-use-chatgpt-to-write-malware/" class="btn btn-secondary">🔗 Lire l'article</a>
+                </article>
+                <article class="veille-card fade-in" data-category="cyber-ai">
+                    <div class="veille-meta">
+                        <span class="veille-date">janvier 2026</span>
+                        <span class="veille-tag cyber-ai">Cyber-AI</span>
+                    </div>
+                    <h3>L'intelligence artificielle au service de la cybersécurité</h3>
+                    <p>Cet article explique comment l'intelligence artificielle est devenue un outil essentiel pour renforcer la cybersécurité. Face à des cyberattaques de plus en plus sophistiquées, les solutions de sécurité traditionnelles ne sont plus suffisantes. L'IA permet d'analyser de grandes quantités de données, de détecter rapidement des comportements anormaux et d'améliorer la réactivité des systèmes de défense.
+                    L'article souligne que la sécurité des réseaux est le domaine où l'IA est la plus utilisée, notamment pour surveiller le trafic en temps réel et identifier les menaces avant qu'elles ne causent des dommages. D'autres domaines comme la protection des postes de travail, la gestion des identités et la sécurité du cloud bénéficient également de ces technologies. 
+                    Cette évolution montre que l'IA joue un rôle clé dans les stratégies de cybersécurité modernes, en aidant les entreprises à mieux anticiper et contrer les attaques informatiques.</p>
+                    <a href="https://www.cysecurity.news/2025/05/ai-in-cybersecurity-market-sees-rapid.html" class="btn btn-secondary">🔗 Lire l'article</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <p
+                style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Certifications professionnelles en cours d'obtention et planifiées pour valider mes compétences
+                techniques dans les domaines des réseaux et de la cybersécurité.
+            </p>
+            <div class="certifications-grid">
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Cisco – Networking Basics.pdf')">
+                    <div class="cert-preview">
+                        <img src="Cisco – Networking Basics.jpg"
+                            alt="Aperçu du certificat Cisco – Notions de base sur les réseaux">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Cisco – Notions de base sur les réseaux</h3>
+                        <p class="cert-issuer">Cisco • 2025</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Cisco – Networking Devices and Configuration.pdf')">
+                    <div class="cert-preview">
+                        <img src="Cisco – Networking Devices and Configuration.jpg"
+                            alt="Aperçu du certificat Cisco – Équipements réseau & configuration">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Cisco – Équipements réseau & configuration</h3>
+                        <p class="cert-issuer">Cisco • 2025</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Cisco – Cybersecurity Awareness.pdf')">
+                    <div class="cert-preview">
+                        <img src="Cisco – Cybersecurity Awareness.jpg"
+                            alt="Aperçu du certificat Cisco – Sensibilisation à la sécurité numérique">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Cisco – Sensibilisation à la sécurité numérique</h3>
+                        <p class="cert-issuer">Cisco • 2025</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('ISC2.pdf')">
+                    <div class="cert-preview">
+                        <img src="ISC2.jpg" 
+                        alt="Aperçu du certificat ISC² – Certified in Cybersecurity (CC)">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>ISC² – Certified in Cybersecurity (CC)</h3>
+                        <p class="cert-issuer">ISC² • 2025</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Cisco – Introduction to Cybersecurity.pdf')">
+                    <div class="cert-preview">
+                        <img src="Cisco – Introduction to Cybersecurity.jpg"
+                            alt="Aperçu du certificat Cisco – Introduction à la cybersécurité">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Cisco – Introduction à la cybersécurité</h3>
+                        <p class="cert-issuer">Cisco • 2025</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('MODULE RGPD.pdf')">
+                    <div class="cert-preview">
+                        <img src="MODULE RGPD.jpg" 
+                        alt="Aperçu du certificat CNIL – Certification RGPD">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>CNIL – Certification RGPD</h3>
+                        <p class="cert-issuer">CNIL • 2024</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('MOOC SecNumAcademie.pdf')">
+                    <div class="cert-preview">
+                        <img src="MOOC SecNumAcademie.jpg"
+                            alt="Aperçu du certificat ANSSI – MOOC SecNumAcadémie">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>ANSSI – MOOC SecNumAcadémie</h3>
+                        <p class="cert-issuer">ANSSI • 2024</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Cisco – Network Support and Security.pdf')">
+                    <div class="cert-preview">
+                        <img src="Cisco – Network Support and Security.jpg"
+                            alt="Aperçu du certificat Cisco – Support réseau & sécurité">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Cisco – Support réseau & sécurité</h3>
+                        <p class="cert-issuer">Cisco • 2025</p>
+                    </div>
+                </div>
+
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Cisco – Network Addressing and Troubleshooting.pdf')">
+                    <div class="cert-preview">
+                        <img src="Cisco – Network Addressing and Troubleshooting.jpg"
+                            alt="Aperçu du certificat Cisco – Adressage réseau & dépannage">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Cisco – Adressage réseau & dépannage</h3>
+                        <p class="cert-issuer">Cisco • 2025</p>
+                    </div>
+                </div>
+
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Gemini Certified Student – University.pdf')">
+                    <div class="cert-preview">
+                        <img src="Gemini Certified Student – University.jpg"
+                            alt="Aperçu du Gemini Certified Student – University">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Gemini Certified Student – University</h3>
+                        <p class="cert-issuer">Gemini • 2025</p>
+                    </div>
+                </div>
+                   <div class="certification-card fade-in"
+                    onclick="openCertModal('cyberini.pdf')">
+                    <div class="cert-preview">
+                        <img src="cyberini.jpg"
+                            alt="Aperçu du certificat Cisco – Adressage réseau & dépannage">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>cyberini – MOOC Cybersécurité</h3>
+                        <p class="cert-issuer">cyberini • 2025</p>
+                    </div>
+                </div>
+
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Google Cloud AI Infrastructure.pdf')">
+                    <div class="cert-preview">
+                        <img src="Google Cloud AI Infrastructure.jpg"
+                            alt="Aperçu du Google Cloud AI Infrastructure">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Google Cloud – Google Cloud AI Infrastructure</h3>
+                        <p class="cert-issuer">Google Cloud • 2026</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Google Prompting Essentials.pdf')">
+                    <div class="cert-preview">
+                        <img src="Google Prompting Essentials.jpg"
+                            alt="Aperçu du Google Prompting Essentials">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Google – Google Prompting Essentials</h3>
+                        <p class="cert-issuer">Google • 2026</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Mathematics for Machine Learning Linear Algebra.pdf')">
+                    <div class="cert-preview">
+                        <img src="Mathematics for Machine Learning Linear Algebra.jpg"
+                            alt="Aperçu du Mathematics for Machine Learning Linear Algebra">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>Imperial College London – Mathematics for Machine Learning Linear Algebra</h3>
+                        <p class="cert-issuer">Imperial College London • 2026</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Matrix Algebra for Engineers.pdf')">
+                    <div class="cert-preview">
+                        <img src="Matrix Algebra for Engineers.jpg"
+                            alt="Aperçu du Matrix Algebra for Engineers">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>The Hong Kong University of Science and Technology – Matrix Algebra for Engineers</h3>
+                        <p class="cert-issuer">The Hong Kong University of Science and Technology • 2026</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in"
+                    onclick="openCertModal('Pre Security.pdf')">
+                    <div class="cert-preview">
+                        <img src="Pre Security.jpg"
+                            alt="Aperçu du Pre Security">
+                    </div>
+                    <div class="cert-card-info">
+                        <h3>TryHackMe – Pre Security</h3>
+                        <p class="cert-issuer">TryHackMe • 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="skills-cloud fade-in">
+                <span class="skill-tag">Configuration Cisco</span>
+                <span class="skill-tag">VLAN & Routage</span>
+                <span class="skill-tag">TCP/IP</span>
+                <span class="skill-tag">Sécurité des données</span>
+                <span class="skill-tag">Support technique</span>
+                <span class="skill-tag">RGPD</span>
+                <span class="skill-tag">Cybersécurité</span>
+                <span class="skill-tag">Administration Windows</span>
+                <span class="skill-tag">Administrateur Linux</span>
+                <span class="skill-tag">Cisco Packet Trace</span>
+                <span class="skill-tag">Mathématiques</span>
+                
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <form class="contact-form fade-in">
+                    <h3>Envoyez-moi un message</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom / Prénom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Objet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">✉️ Envoyer</button>
+                </form>
+
+                <div class="contact-info fade-in">
+                    <h3>Informations de contact</h3>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon email">📧</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:aymanezzamani7@gmail.com">aymanezzamani7@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon linkedin">💼</div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/ayman-ezzamani"
+                                    target="_blank">linkedin.com/in/ayman-ezzamani</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon location">📍</div>
+                            <div class="contact-details">
+                                <h4>Localisation</h4>
+                                <p style="color: var(--text-secondary); margin: 0;">Rennes, France</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AE</h3>
+                <p>Étudiant passionné en BTS SIO SISR, spécialisé dans les infrastructures réseau et la cybersécurité.
+                    Toujours en quête d'apprentissage et d'innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <div class="footer-links">
+                    <a href="#accueil">Accueil</a>
+                    <a href="#apropos">À propos</a>
+                    <a href="#realisations">Réalisations</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Mentions légales</h3>
+                <div class="footer-links">
+                    <a href="#" onclick="openMentionsModal(); return false;">Consulter les mentions légales</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contacte-moi</h3>
+                <div class="footer-social">
+                    <a href="mailto:aymanezzamani7@gmail.com" title="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path
+                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ayman-ezzamani" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-linkedin">
+                            <path
+                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox pour les images -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="lightbox-nav lightbox-prev" onclick="prevImage()">‹</button>
+        <div class="lightbox-content">
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div class="lightbox-counter">
+                <span id="lightbox-counter">1 / 1</span>
+            </div>
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="nextImage()">›</button>
+    </div>
+
+    <!-- Modal pour les certificats -->
+    <div id="cert-modal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="cert-modal-close" onclick="closeCertModal()">×</span>
+            <h3 id="cert-modal-title">Nom du Certificat</h3>
+            <div class="cert-modal-body">
+                <object id="cert-modal-object" data="" type="application/pdf">
+                    <p style="padding: 20px; text-align: center;">Votre navigateur ne supporte pas l'affichage PDF intégré. <br> <a id="pdf-fallback-link" href="#" target="_blank">Cliquez ici pour télécharger/ouvrir le PDF : <span id="pdf-fallback-name"></span></a></p>
+                </object>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour mentions légales -->
+    <div id="mentions-modal" class="mentions-modal">
+        <div class="mentions-modal-content">
+            <span class="mentions-modal-close" onclick="closeMentionsModal()">×</span>
+            <div class="mentions-modal-body">
+              <h1>Mentions légales</h1>
+
+<h2>Éditeur</h2>
+<p>
+    Ayman Ezzamani – Portfolio personnel<br>
+    Contact : <a href="mailto:aymanezzamani7@gmail.com">aymanezzamani7@gmail.com</a>
+</p>
+
+<h2>Hébergement</h2>
+<p>
+    Hébergeur : OVHcloud<br>
+    Adresse : 2, rue Kellermann, 59100 Roubaix, France
+</p>
+
+<h2>Données personnelles (RGPD)</h2>
+<p>
+    Les données collectées via le contact sont utilisées uniquement pour répondre aux demandes.<br>
+    Elles ne sont ni cédées ni vendues et sont conservées pour la durée strictement nécessaire.<br>
+    Conformément au RGPD, vous pouvez exercer vos droits (accès, rectification, suppression) par email.
+</p>
+
+<h2>Cookies</h2>
+<p>
+    Ce site utilise exclusivement des cookies techniques strictement nécessaires à son bon fonctionnement.
+    Aucun cookie de suivi, de mesure d'audience ou à des fins publicitaires n'est utilisé.
+</p>
+
+<h2>Données personnelles</h2>
+<p>
+    Ce site ne procède à aucune collecte ni conservation de données personnelles.
+    Les échanges par email ont pour seule finalité la réponse aux demandes formulées par les utilisateurs.
+</p>
+
+<h2>Propriété intellectuelle</h2>
+<p>
+    L'ensemble des contenus présents sur ce site est protégé par le droit de la propriété intellectuelle.
+    Toute reproduction, représentation ou réutilisation, totale ou partielle, sans autorisation préalable est interdite.
+</p>
+
+
+            </div>
+        </div>
+    </div>
+
+ <script>
+    // Gestion de la navigation active
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function updateActiveLink() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+
+    // Gestion des onglets E5/E6
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            this.classList.add('active');
+            const targetTab = this.getAttribute('data-tab');
+            const targetContent = document.getElementById(targetTab + '-content');
+            targetContent.classList.add('active');
+
+            if (targetTab === 'e6') {
+                targetContent.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            }
+        });
+    });
+
+    // Activation du premier onglet par défaut
+    document.addEventListener('DOMContentLoaded', () => {
+        const initialTab = document.querySelector('.tab-btn.active');
+        if (initialTab) {
+            const targetTab = initialTab.getAttribute('data-tab');
+            document.getElementById(targetTab + '-content').classList.add('active');
+        }
+
+        const e6Image = document.querySelector('#e6-content .e6-schema-img');
+        if (e6Image && e6Image.src) {
+            const preloadedImage = new Image();
+            preloadedImage.src = e6Image.src;
+
+            if (typeof preloadedImage.decode === 'function') {
+                preloadedImage.decode().catch(() => {});
+            }
+        }
+    });
+
+    // Gestion de la veille - Filtre
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const veilleCards = document.querySelectorAll('.veille-card');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.getAttribute('data-filter');
+
+            veilleCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // FONCTIONS MODALES
+    let currentPdfUrl = '';
+
+    function openCertModal(pdfUrl, title) {
+        const modal = document.getElementById('cert-modal');
+        const modalTitle = document.getElementById('cert-modal-title');
+        const modalObject = document.getElementById('cert-modal-object');
+        const fallbackLink = document.getElementById('pdf-fallback-link');
+        const fallbackName = document.getElementById('pdf-fallback-name');
+        
+        currentPdfUrl = pdfUrl;
+        modalTitle.textContent = title || 'Certificat';
+        
+        const fallbackUrl = `${pdfUrl}?t=${new Date().getTime()}`;
+        fallbackLink.href = fallbackUrl;
+        fallbackName.textContent = pdfUrl;
+        
+        modalObject.data = '';
+        modalObject.src = '';
+        
+        setTimeout(() => {
+            const finalPdfUrl = `${pdfUrl}?t=${new Date().getTime()}#zoom=page-width&view=FitH`;
+            modalObject.data = finalPdfUrl;
+        }, 50);
+        
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        modal.focus();
+    }
+
+    function closeCertModal() {
+        const modal = document.getElementById('cert-modal');
+        const modalObject = document.getElementById('cert-modal-object');
+        
+        modal.style.display = 'none';
+        
+        setTimeout(() => {
+            modalObject.data = '';
+            modalObject.src = '';
+            
+            const newObject = document.createElement('object');
+            newObject.id = 'cert-modal-object';
+            newObject.setAttribute('data', '');
+            newObject.setAttribute('type', 'application/pdf');
+            newObject.innerHTML = `
+                <p style="padding: 20px; text-align: center;">
+                    Votre navigateur ne supporte pas l'affichage PDF intégré. <br> 
+                    <a id="pdf-fallback-link" href="#" target="_blank">
+                        Cliquez ici pour télécharger/ouvrir le PDF : 
+                        <span id="pdf-fallback-name"></span>
+                    </a>
+                </p>
+            `;
+            
+            const oldObject = document.getElementById('cert-modal-object');
+            const modalBody = document.querySelector('.cert-modal-body');
+            modalBody.replaceChild(newObject, oldObject);
+            
+            currentPdfUrl = '';
+        }, 100);
+        
+        document.body.style.overflow = 'auto';
+    }
+
+    // Fonctions pour le modal des mentions légales
+    function openMentionsModal() {
+        const modal = document.getElementById('mentions-modal');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMentionsModal() {
+        const modal = document.getElementById('mentions-modal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // NOUVEAU : Système de lightbox pour les images
+    let currentImageIndex = 0;
+    let currentImages = [];
+    let currentProjectId = '';
+
+    function openLightbox(projectId, imageIndex = 0) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        
+        // Trouver le projet correspondant
+        const projectBtn = document.querySelector(`[data-project="${projectId}"]`);
+        if (!projectBtn) return;
+        
+        const projectContent = projectBtn.nextElementSibling;
+        if (!projectContent) return;
+        
+        // Récupérer toutes les images du projet
+        const projectImages = projectContent.querySelectorAll('.project-image img');
+        currentImages = Array.from(projectImages);
+        currentProjectId = projectId;
+        
+        if (currentImages.length === 0) return;
+        
+        // Ajuster l'index si nécessaire
+        currentImageIndex = Math.min(imageIndex, currentImages.length - 1);
+        
+        // Mettre à jour l'image
+        lightboxImage.src = currentImages[currentImageIndex].src;
+        lightboxImage.alt = currentImages[currentImageIndex].alt;
+        lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+        
+        // Afficher la lightbox
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Afficher/masquer les boutons de navigation
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+        
+        if (currentImages.length > 1) {
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
+        } else {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function nextImage() {
+        if (currentImages.length <= 1) return;
+        
+        currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+        updateLightboxImage();
+    }
+
+    function prevImage() {
+        if (currentImages.length <= 1) return;
+        
+        currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+        updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        
+        lightboxImage.src = currentImages[currentImageIndex].src;
+        lightboxImage.alt = currentImages[currentImageIndex].alt;
+        lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+    }
+
+    // Navigation au clavier dans la lightbox
+    document.addEventListener('keydown', function(e) {
+        const lightbox = document.getElementById('lightbox');
+        if (!lightbox.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowRight':
+                nextImage();
+                break;
+            case 'ArrowLeft':
+                prevImage();
+                break;
+        }
+    });
+
+    // Fermeture de la lightbox
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target.classList.contains('lightbox-close') || e.target === this) {
+            closeLightbox();
+        }
+    });
+
+    document.getElementById('cert-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeCertModal();
+        }
+    });
+
+    document.getElementById('mentions-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeMentionsModal();
+        }
+    });
+
+    // Fermeture avec la touche Échap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeCertModal();
+            closeMentionsModal();
+            closeLightbox();
+        }
+    });
+
+    // CORRECTION : Gestion de l'accordéon - 1 CLIC TOUJOURS
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectBtns = document.querySelectorAll('.project-btn');
+        let currentOpenProject = null;
+        
+        // Fonction pour ouvrir une compétence (ferme automatiquement l'ancienne)
+        function openProject(projectBtn) {
+            const content = projectBtn.nextElementSibling;
+            
+            // Fermer la compétence actuellement ouverte (si différente)
+            if (currentOpenProject && currentOpenProject !== projectBtn) {
+                currentOpenProject.classList.remove('active');
+                const oldContent = currentOpenProject.nextElementSibling;
+                oldContent.classList.remove('active');
+            }
+            
+            // Basculer l'état de la nouvelle compétence
+            const isOpening = !projectBtn.classList.contains('active');
+            projectBtn.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            // Mettre à jour la référence de la compétence ouverte
+            if (projectBtn.classList.contains('active')) {
+                currentOpenProject = projectBtn;
+                
+                // Scroller vers le début
+                setTimeout(() => {
+                    projectBtn.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start'
+                    });
+                }, 300);
+            } else {
+                currentOpenProject = null;
+            }
+        }
+        
+        // Gestion des clics sur les boutons de projet
+        projectBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                openProject(this);
+            });
+        });
+        
+        // Gestion des clics sur les images
+        document.querySelectorAll('.project-image').forEach(image => {
+            image.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const projectItem = this.closest('.project-item');
+                const projectBtn = projectItem.querySelector('.project-btn');
+                const projectId = projectBtn.getAttribute('data-project');
+                
+                // S'assurer que la compétence est ouverte
+                if (!projectBtn.classList.contains('active')) {
+                    openProject(projectBtn);
+                }
+                
+                // Trouver l'index de l'image
+                const images = projectItem.querySelectorAll('.project-image');
+                const imageIndex = Array.from(images).indexOf(this);
+                
+                // Ouvrir la lightbox
+                openLightbox(projectId, imageIndex);
+            });
+        });
+        
+        // Fermer l'accordéon quand on clique en dehors
+        document.addEventListener('click', function(e) {
+            // Ne pas fermer si on clique sur un élément de projet
+            if (e.target.closest('.project-item') || 
+                e.target.closest('#lightbox')) {
+                return;
+            }
+            
+            // Fermer la compétence ouverte
+            if (currentOpenProject) {
+                currentOpenProject.classList.remove('active');
+                const content = currentOpenProject.nextElementSibling;
+                content.classList.remove('active');
+                currentOpenProject = null;
+            }
+        });
+    });
+
+    // Animation au défilement
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+    });
+
+    // Gestion du menu mobile
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        const navLinks = document.querySelector('.nav-links');
+        const currentDisplay = window.getComputedStyle(navLinks).display;
+        
+        if (currentDisplay === 'none' || currentDisplay === '') {
+            navLinks.style.display = 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'rgba(15, 23, 42, 0.95)';
+            navLinks.style.backdropFilter = 'blur(10px)';
+            navLinks.style.padding = '1rem';
+            navLinks.style.gap = '1rem';
+            navLinks.style.borderTop = '1px solid var(--border)';
+        } else {
+            navLinks.style.display = 'none';
+        }
+    });
+
+    // Fermer le menu mobile quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                document.querySelector('.nav-links').style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
